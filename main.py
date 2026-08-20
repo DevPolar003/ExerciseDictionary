@@ -36,6 +36,8 @@ while True:
             print(f"Resultado: {resultado}")
             
         case 4: 
+            for k, v in nome_dicionario.items():
+                print(f"{k.title():7}: {v}")
             key_delete = input("key que deseja apagar:")
             if key_delete in nome_dicionario:
                 del nome_dicionario[key_delete]
