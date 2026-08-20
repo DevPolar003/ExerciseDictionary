@@ -1,66 +1,59 @@
 import os
-os.system("cls") 
+
 nome_dicionario = {}
+# Mapeamento para converter o texto digitado no tipo real
+tipos = {"str": str, "int": int, "float": float, "bool": bool}
 
 while True:
-    print("0 - Sair")
-    print("1 - Zerar dicionário")
-    print("2 - Adicionar keys")
-    print("3 - Editar values")
-    print("4 - Apagar keys")
-    print(f"Dicionário atual: {nome_dicionario}")
+    os.system("cls" if os.name == "nt" else "clear")
+    print(f"Dicionário atual: {nome_dicionario}\n")
+    print("0 - Sair | 1 - Zerar | 2 - Adicionar key | 3 - Editar value | 4 - Apagar key")
     
-    valor = int(input("\nEscolha uma opção: "))
+    opcao = input("Escolha uma opção: ")
 
-    match valor:
-        case 0:
-            print("Saindo do programa...")
+    match opcao:
+        case "0":
+            print("Saindo...")
             break
 
-        case 1:
-            nome_dicionario = {}
+        case "1":
+            nome_dicionario.clear()
             print("Dicionário zerado!")
-        case 2:
-            print(type(nome_dicionario.keys()))
-            nova_chave = input("Digite o nome da nova chave: ")
-            nova_chave = nova_chave.lower()
-            tipo = input("Digite o tipo da varieavel: ")
-            nome_dicionario[nova_chave] = None
-        case 3:
-            for k, v in nome_dicionario.items():
-                print(f"{k.title():7}: {v}")
-            alterar = Input('digite qual voce deseja alterar')
-            valor = input('digite o valor que vai colocar')
-            nome_dicionario['alterar'] = valor
-            
-        case 4: 
-            for k, v in nome_dicionario.items():
-                print(f"{k.title():7}: {v}")
-            key_delete = input("key que deseja apagar:")
-            if key_delete in nome_dicionario:
-                del nome_dicionario[key_delete]
-                print("a Chave {key_delete} apagada com sucesso")
+
+        case "2":
+            chave = input("Nome da key: ").strip().lower()
+            tipo_nome = input("Tipo (str, int, float, bool): ").strip().lower()
+            conteudo = input("Conteúdo: ")
+
+            # Converte para o tipo correto se existir no dicionário de tipos, senão mantém como texto
+            construtor = tipos.get(tipo_nome, str)
+            nome_dicionario[chave] = construtor(conteudo)
+            print(f"Key '{chave}' adicionada com sucesso!")
+
+        case "3":
+            if not nome_dicionario:
+                print("Dicionário está vazio!")
             else:
-                print("Essa chave nao existe, tente novamente")
-            
+                print("\nKeys disponíveis:")
+                for k, v in nome_dicionario.items():
+                    print(f"- {k} (atual: {v}, tipo: {type(v).__name__})")
                 
-#Faça um programa que inicialize um dicionário zerado e apareça as opcoes:
-#0 - SAIR
-#1 - Zerar o dicionário
-#2 - Adicionar keys
-#3 - Editar values
-#4 - Apagar keys
+                chave = input("\nQual key deseja editar? ").strip().lower()
+                if chave in nome_dicionario:
+                    tipo_nome = input("Novo tipo (str, int, float, bool): ").strip().lower()
+                    conteudo = input("Novo conteúdo: ")
+                    construtor = tipos.get(tipo_nome, str)
+                    nome_dicionario[chave] = construtor(conteudo)
+                    print("Valor atualizado!")
+                else:
+                    print("Key não encontrada.")
 
-
-#2- Ao adicionar keys, pergunte:
-#- o nome da key
-#- o tipo da key
-#- o conteúdo da key
-
-#3- Ao editar uma um value, liste as keys existentes para o usuário esolher
-#qual editar, e coloque o tipo correspondente do conteúdo.
-
-#4 - Antes de apagar a key, liste as existentes para que ele escolha a que será excluída
-
-
-
+        case "4":
+            chave = input("Key que deseja apagar: ").strip().lower()
+            if nome_dicionario.pop(chave, None) is not None:
+                print(f"A chave '{chave}' foi apagada com sucesso!")
+            else:
+                print("Essa chave não existe.")
+    
+    input("\nPressione ENTER para continuar...")
+    
