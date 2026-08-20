@@ -29,6 +29,14 @@ while True:
             for i in nome_dicionario:
                 novo_valor = input("Digite o valor para essa chave: ")
                 nome_dicionario[i] = novo_valor
+        case 4: 
+            key_delete = input("key que deseja apagar:")
+            if key_delete in nome_dicionario:
+                del nome_dicionario[key_delete]
+                print("a Chave {key_delete} apagada com sucesso")
+            else:
+                print("Essa chave nao existe, tente novamente")
+            
                 
 #Faça um programa que inicialize um dicionário zerado e apareça as opcoes:
 #0 - SAIR
