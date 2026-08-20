@@ -20,7 +20,16 @@ while True:
         case 1:
             nome_dicionario = {}
             print("Dicionário zerado!")
-
+        case 2:
+            nova_chave = input("Digite o nome da nova chave: ")
+            novo_valor = novo_valor.lower()
+            nova_chave = nova_chave.lower()
+            nome_dicionario[nova_chave] = None
+        case 3:
+            for i in nome_dicionario:
+                novo_valor = input("Digite o valor para essa chave: ")
+                nome_dicionario[i] = novo_valor
+                
 #Faça um programa que inicialize um dicionário zerado e apareça as opcoes:
 #0 - SAIR
 #1 - Zerar o dicionário
