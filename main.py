@@ -5,9 +5,9 @@ nome_dicionario = {}
 while True:
     print("0 - Sair")
     print("1 - Zerar dicionário")
-    print("2 - Criar uma chave")
-    print("3 - Procurar um dado na chave")
-    print("4 - Editar o valor de uma chave")
+    print("2 - Adicionar keys")
+    print("3 - Editar values")
+    print("4 - Apagar keys")
     print(f"Dicionário atual: {nome_dicionario}")
     
     valor = int(input("\nEscolha uma opção: "))
