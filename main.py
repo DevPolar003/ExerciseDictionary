@@ -21,23 +21,23 @@ while True:
             nome_dicionario = {}
             print("Dicionário zerado!")
 
-Faça um programa que inicialize um dicionário zerado e apareça as opcoes:
-0 - SAIR
-1 - Zerar o dicionário
-2 - Adicionar keys
-3 - Editar values
-4 - Apagar keys
+#Faça um programa que inicialize um dicionário zerado e apareça as opcoes:
+#0 - SAIR
+#1 - Zerar o dicionário
+#2 - Adicionar keys
+#3 - Editar values
+#4 - Apagar keys
 
 
-2- Ao adicionar keys, pergunte:
-- o nome da key
-- o tipo da key
-- o conteúdo da key
+#2- Ao adicionar keys, pergunte:
+#- o nome da key
+#- o tipo da key
+#- o conteúdo da key
 
-3- Ao editar uma um value, liste as keys existentes para o usuário esolher
-qual editar, e coloque o tipo correspondente do conteúdo.
+#3- Ao editar uma um value, liste as keys existentes para o usuário esolher
+#qual editar, e coloque o tipo correspondente do conteúdo.
 
-4 - Antes de apagar a key, liste as existentes para que ele escolha a que será excluída
+#4 - Antes de apagar a key, liste as existentes para que ele escolha a que será excluída
 
 
 
