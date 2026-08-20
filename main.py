@@ -22,13 +22,17 @@ while True:
             print("Dicionário zerado!")
         case 2:
             nova_chave = input("Digite o nome da nova chave: ")
-            novo_valor = novo_valor.lower()
             nova_chave = nova_chave.lower()
+            tipo = input("Digite o tipo da varieavel: ")
             nome_dicionario[nova_chave] = None
-        case 3:
             for i in nome_dicionario:
-                novo_valor = input("Digite o valor para essa chave: ")
-                nome_dicionario[i] = novo_valor
+                 novo_valor = input("Digite o valor para essa chave: ")
+                 nome_dicionario[i] = novo_valor
+
+        case 3:
+            procurar_chave = input("Digite a chave que deseja procurar: ")
+            resultado = nome_dicionario.get(procurar_chave.lower())
+            print(f"Resultado: {resultado}")
         case 4: 
             key_delete = input("key que deseja apagar:")
             if key_delete in nome_dicionario:
