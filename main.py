@@ -27,13 +27,11 @@ while True:
             tipo = input("Digite o tipo da varieavel: ")
             nome_dicionario[nova_chave] = None
         case 3:
-            procurar_chave = input("Digite a chave que deseja procurar: ")
-            resultado = nome_dicionario.get(procurar_chave.lower())
-            print(f"Resultado: {resultado}")
-            for i in nome_dicionario:
-                 novo_valor = input("Digite o valor para essa chave: ")
-                 nome_dicionario[i] = novo_valor
-
+            for k, v in nome_dicionario.items():
+                print(f"{k.title():7}: {v}")
+            alterar = Input('digite qual voce deseja alterar')
+            valor = input('digite o valor que vai colocar')
+            nome_dicionario['alterar'] = valor
             
         case 4: 
             for k, v in nome_dicionario.items():
