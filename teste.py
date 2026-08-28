@@ -7,6 +7,12 @@ def zerar_dicionario(dicio: dict) -> None:
         print("--------Conteúdo do dicionario \n \tVAZIO!")
     else:
         dicio = {}
+        
+def exibir_dicionario(dicio: dict) -> None:
+    print("\n------- Conteudo do dicionario")
+    for k, v in dicio.items():
+        print(f"{k}.........: {v}")
+    print("------------------------------")
 
 def adicionar_key(dicio: dict) -> None:
         nome_key = input("Nome da key: ")
@@ -52,7 +58,4 @@ while True:
         case 2:
             adicionar_key(dicionario)
         case 5:
-            print("\n------- Conteudo do dicionario")
-            for k, v in dicionario.items():
-                print(f"{k}.........: {v}")
-            print("------------------------------")
+            exibir_dicionario(dicionario)
