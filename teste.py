@@ -39,6 +39,20 @@ def adicionar_key(dicio: dict) -> None:
                 case _ :
                     print("Opçao invalida")
 
+def editar_value(dicio: dict) -> None:
+    print("Keys:")
+    for k, v in dicio.items():
+         print(f"{k}.........: {v}")
+    nun_chave = input("Numero da chave: ")
+    novo_valor = input("Novo valor: ")
+    exibir_dicionario(dicio)
+
+def remover_key(dicio: dict) -> None:
+    print("Keys:")
+    for k, v in dicio.items():
+         print(f"{k}.........: {v}")
+    nun_chave = input("Deseja excluir qual chave? ")
+
 while True:
     print("""
         0 - Sair
@@ -57,5 +71,9 @@ while True:
             zerar_dicionario(dicionario)
         case 2:
             adicionar_key(dicionario)
+        case 3:
+            editar_value(dicionario)
+        case 4:
+            remover_key(dicionario)
         case 5:
             exibir_dicionario(dicionario)
