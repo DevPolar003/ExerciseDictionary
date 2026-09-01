@@ -41,11 +41,14 @@ def adicionar_key(dicio: dict) -> None:
 
 def editar_value(dicio: dict) -> None:
     print("Keys:")
-    for k, v in dicio.items():
+    for j, {k, v} in dicio.items():
          print(f"{k}.........: {v}")
     nun_chave = input("Numero da chave: ")
-    novo_valor = input("Novo valor: ")
-    exibir_dicionario(dicio)
+    if len(dicio) == nun_chave:    
+        novo_valor = input("Novo valor: ")
+        exibir_dicionario(dicio)
+    else:
+        print(f">>>>>>> '{nun_chave}' é um numero de chave invalido")
 
 def remover_key(dicio: dict) -> None:
     print("Keys:")
