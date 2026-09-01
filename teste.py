@@ -40,21 +40,55 @@ def adicionar_key(dicio: dict) -> None:
                     print("Opçao invalida")
 
 def editar_value(dicio: dict) -> None:
-    print("Keys:")
-    for j, {k, v} in dicio.items():
-         print(f"{k}.........: {v}")
-    nun_chave = input("Numero da chave: ")
-    if len(dicio) == nun_chave:    
-        novo_valor = input("Novo valor: ")
-        exibir_dicionario(dicio)
+    if len(dicio) == 0:
+        print(">>>>> O dicionário está vazio!")
     else:
-        print(f">>>>>>> '{nun_chave}' é um numero de chave invalido")
+        print("Keys:")
+        for i, (k, v) in enumerate(dicio.items(), start=1):
+            print(f"{i} - {k}: {v}")
+        nun_chave = int(input("Número da chave: "))
+        
+        chave_selecionada = 0
+        for i, (k, v) in enumerate(dicio.items(), start=1):
+            if i == nun_chave:
+                chave_selecionada = k
+                
+        if chave_selecionada != 0:
+            novo_valor = input("Novo valor: ")
+
+            tipo_atual = type(dicio[chave_selecionada])
+            if tipo_atual == int:
+                dicio[chave_selecionada] = int(novo_valor)
+            elif tipo_atual == float:
+                dicio[chave_selecionada] = float(novo_valor)
+            elif tipo_atual == bool:
+                dicio[chave_selecionada] = bool(novo_valor)
+            else:
+                dicio[chave_selecionada] = novo_valor
+            exibir_dicionario(dicio)
+        else:
+            print(f">>>>> '{nun_chave}' é um número de chave inválido!")
 
 def remover_key(dicio: dict) -> None:
-    print("Keys:")
-    for k, v in dicio.items():
-         print(f"{k}.........: {v}")
-    nun_chave = input("Deseja excluir qual chave? ")
+    if len(dicio) == 0:
+        print(">>>>> O dicionário está vazio!")
+    else:
+        print("Keys:")
+        for i, (k, v) in enumerate(dicio.items(), start=1):
+            print(f"{i} - {k}: {v}")
+  
+        nun_chave = int(input("Deseja excluir qual chave? "))
+        
+        chave_selecionada = 0
+        for i, (k, v) in enumerate(dicio.items(), start=1):
+            if i == nun_chave:
+                chave_selecionada = k
+                
+        if chave_selecionada != 0:
+            del dicio[chave_selecionada]
+            exibir_dicionario(dicio)
+        else:
+            print(f">>>>> '{nun_chave}' é um número de chave inválido!")
 
 while True:
     print("""
