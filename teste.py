@@ -22,7 +22,7 @@ def exibir_dicionario(dicio: dict) -> None:
         input("Pressione algo para continuar...")
 
 def adicionar_key(dicio: dict) -> None:
-        nome_key = input("Nome da key: ").lower()
+        nome_key = input("Nome da key: ").strip().lower()
         if nome_key in dicio:
             print(f">>>>> A key '{nome_key}' já existe!")
         else:    
