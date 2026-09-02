@@ -5,19 +5,24 @@ dicionario = {}
 def zerar_dicionario(dicio: dict) -> None:
     if len(dicio) == 0:
         print("--------Conteúdo do dicionario \n \tVAZIO!")
+        input("Pressione algo para continuar...")
     else:
         print(">>>>>> Dicionario zerado!")
-        dicio = {}
+        dicio.clear()
+        input("Pressione algo para continuar...")
         
 def exibir_dicionario(dicio: dict) -> None:
-    print("\n-------Conteudo do dicionario")
-    for k, v in dicio.items():
-        print(f"{k}.........: {v}")
-    print("------------------------------")
-    input("Precione algo para continuar...")
+    if len(dicio) == 0:
+        print(">>>>> O dicionário está vazio!")
+    else:
+        print("\n-------Conteudo do dicionario")
+        for k, v in dicio.items():
+            print(f"{k}.........: {v}")
+        print("------------------------------")
+        input("Pressione algo para continuar...")
 
 def adicionar_key(dicio: dict) -> None:
-        nome_key = input("Nome da key: ")
+        nome_key = input("Nome da key: ").lower()
         if nome_key in dicio:
             print(f">>>>> A key '{nome_key}' já existe!")
         else:    
@@ -36,18 +41,26 @@ def adicionar_key(dicio: dict) -> None:
                             dicio[nome_key] = 0
                         else:
                             dicio[nome_key] = int(conteudo_key)
+                            print(f"{nome_key}: {conteudo_key} foi criado com sucesso")
+                            input("Pressione algo para continuar...")
                     case 2:
                         if conteudo_key == "":
                             dicio[nome_key] = 0.0
                         else:
                             dicio[nome_key] = float(conteudo_key)
+                            print(f"{nome_key}: {conteudo_key} foi criado com sucesso")
+                            input("Pressione algo para continuar...")
                     case 3 :
                         dicio[nome_key] = conteudo_key
+                        print(f"{nome_key}: {conteudo_key} foi criado com sucesso")
+                        input("Pressione algo para continuar...")
                     case 4:
                         if conteudo_key == "":
                             dicio[nome_key] = False
                         else:
                             dicio[nome_key] = bool(conteudo_key)
+                            print(f"{nome_key}: {conteudo_key} foi criado com sucesso")
+                            input("Pressione algo para continuar...")
                     case _ :
                         print("Opçao invalida")
 
@@ -99,7 +112,6 @@ def remover_key(dicio: dict) -> None:
         if chave_selecionada != 0:
             del dicio[chave_selecionada]
             exibir_dicionario(dicio)
-            input("Precione algo para continuar...")
         else:
             print(f">>>>> '{nun_chave}' é um número de chave inválido!")
 
