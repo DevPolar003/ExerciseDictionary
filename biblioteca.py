@@ -10,7 +10,6 @@ def adicionar_key(dicio: dict) -> None:
             3 - str
             4 - bool
         """)
-        
         try:
             tipo_dado = int(input("\tEscolha: "))
             conteudo_key = input("Digite o conteudo: ")
