@@ -63,11 +63,11 @@ def adicionar_key(dicio: dict) -> None:
                         input("Pressione algo para continuar...")
                     
                 case _:
-                    print(">>>>> Opção inválida")
+                    print(">>>>> Opção invalida")
                     input("Pressione algo para continuar...")
                     
         except ValueError:
-            print(">>>>> Escolha inválida. digite um número de 1 a 4.>>>>>")
+            print(">>>>> Escolha invalida. digite um número de 1 a 4.>>>>>")
             input("Pressione algo para continuar...")
 
 
@@ -111,7 +111,7 @@ def editar_value(dicio: dict) -> None:
                 input("Pressione algo para continuar...")
                 
         except ValueError:
-            print(">>>>> Erro: Você deve digitar o numero correspondente à chave!")
+            print(">>>>> Você deve digitar o numero correspondente à chave")
             input("Pressione algo para continuar...")
 
 
@@ -140,7 +140,7 @@ def remover_key(dicio: dict) -> None:
                 input("Pressione algo para continuar...")
                 
         except ValueError:
-            print(">>>>> Erro: Você deve digitar o numero correspondente a chave")
+            print(">>>>> Voce deve digitar o numero correspondente a chave")
             input("Pressione algo para continuar...")
 
 def zerar_dicionario(dicio: dict) -> None:
