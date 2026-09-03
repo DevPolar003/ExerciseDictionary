@@ -86,17 +86,13 @@ def editar_value(dicio: dict) -> None:
             for i, (k, v) in enumerate(dicio.items(), start=1):
                 if i == nun_chave:
                     chave_selecionada = k
-
             if chave_selecionada != 0:
                 novo_valor = input("Novo valor: ")
-                
                 try:
                     if type(dicio[chave_selecionada]) == int:
                         dicio[chave_selecionada] = int(novo_valor)
-                        
                     elif type(dicio[chave_selecionada]) == float:
                         dicio[chave_selecionada] = float(novo_valor)
-                        
                     elif type(dicio[chave_selecionada]) == bool:
                         if novo_valor == "":
                             dicio[chave_selecionada] = False
@@ -106,7 +102,6 @@ def editar_value(dicio: dict) -> None:
                             dicio[chave_selecionada] = bool(novo_valor)
                     else:
                         dicio[chave_selecionada] = novo_valor
-                        
                     exibir_dicionario(dicio)
                     
                 except ValueError:
